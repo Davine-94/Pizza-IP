@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    function orderPizza(size, crustType, toppings, quantity, yourDelivery) {
+    function orderPizza(size, ourCrustType, toppings, quantity, yourDelivery) {
         this.size = size;
-        this.crustType = crustType;
+        this.ourCrustType = ourCrustType;
         this.toppings = toppings;
         this.quantity = quantity;
         this.yourDelivery = yourDelivery;
@@ -79,13 +79,13 @@ $(document).ready(function () {
 
     // Get input references
     let pizzaSize = "";
-    let crustType = "";
+    let ourCrustType = "";
     let delivery = "";
     let quantity = 1;
     let toppings = [];
 
     function completeAmount() {
-        const newPizza = new orderPizza(pizzaSize, crustType, toppings, quantity, delivery);
+        const newPizza = new orderPizza(pizzaSize, ourCrustType, toppings, quantity, delivery);
         const newTotal = newPizza.getTotal();
 
         $("#sTotal").html(`Total - Ksh. ${newTotal}`);
@@ -102,10 +102,10 @@ $(document).ready(function () {
     });
 
     
-    $("input[name=crustType]").change(function () {
-        crustType = $('input[name=crustType]:checked').val();
+    $("input[name=ourCrustType]").change(function () {
+        ourCrustType = $('input[name=ourCrustType]:checked').val();
 
-        $("#sCrust").html(`Crust - ${crustType}`);
+        $("#sCrust").html(`Crust - ${ourCrustType}`);
 
        
      completeAmount();
@@ -180,7 +180,7 @@ $(document).ready(function () {
             return showError("You must select a pizza size");
         }
 
-        if (!crustType) {
+        if (!ourCrustType) {
             return showError("You must select a crust type");
         }
 
@@ -204,7 +204,7 @@ $(document).ready(function () {
 
         $("#oSummaryName").html(pizzaName);
         $("#oSummarySize").html(`<b>Size</b> <br/> ${pizzaSize}`);
-        $("#oSummaryCrust").html(`<b>Crust Type</b> <br/> ${crustType}`);
+        $("#oSummaryCrust").html(`<b>Crust Type</b> <br/> ${ourCrustType}`);
         $("#oSummaryToppings").html(`<b>Toppings</b> <br/> ${toppings}`);
         $("#oSummaryQuantity").html(`<b>Quantity</b> <br/> ${quantity}`);
         $("#oSummaryTotal").html(`<b>Total</b> <br/> Ksh. ${orderPizza.prototype.orderTotal}`);
