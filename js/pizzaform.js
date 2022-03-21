@@ -84,40 +84,39 @@ $(document).ready(function () {
     let quantity = 1;
     let toppings = [];
 
-    function totalHelper() {
+    function completeAmount() {
         const newPizza = new orderPizza(pizzaSize, crustType, toppings, quantity, delivery);
         const newTotal = newPizza.getTotal();
 
         $("#sTotal").html(`Total - Ksh. ${newTotal}`);
     }
 
-    // Populate order summary
-    // Update pizza size on summary section
+  
     $("input[name=pizzaSizes]").change(function () {
         pizzaSize = $('input[name=pizzaSizes]:checked').val();
 
         $("#sSize").html(`Size - ${pizzaSize}`);
 
-        // Get new total
-        totalHelper();
+     
+     completeAmount();
     });
 
-    // Update crust type on summary section
+    
     $("input[name=crustType]").change(function () {
         crustType = $('input[name=crustType]:checked').val();
 
         $("#sCrust").html(`Crust - ${crustType}`);
 
-        // Get new total
-        totalHelper();
+       
+     completeAmount();
     });
 
-    // Update toppings on summary section
+  
     $("input[name=toppings]").change(function () {
         const newToppings = [];
 
         $.each($("input[name='toppings']:checked"), function () {
-            // Add a space before the array item to allow for text wrapping
+            
             newToppings.push(` ${$(this).val()}`);
         });
 
@@ -125,11 +124,10 @@ $(document).ready(function () {
 
         $("#sToppings").html(`Toppings - ${toppings}`);
 
-        // Get new total
-        totalHelper();
+     completeAmount();
     });
 
-    // Update delivery on summary section
+   
     $("input[name=delivery]").change(function () {
         delivery = $('input[name=delivery]:checked').val();
 
@@ -137,18 +135,17 @@ $(document).ready(function () {
             $("#yesToDelivery").hide();
             $("#sdelivery").html(`Delivery fee - Ksh. 0`);
 
-            // Get new total
-            totalHelper();
+          
+         completeAmount();
         } else if (delivery === "yes") {
             $("#yesToDelivery").show();
             $("#sDelivery").html(`Delivery fee - Ksh. ${orderPizza.prototype.deliveryPrice}`);
 
             // Get new total
-            totalHelper();
+         completeAmount();
         }
     });
 
-    // Update quantity
     $("#quantity").change(function () {
         const newQuantity = $('#quantity').val();
 
@@ -159,8 +156,8 @@ $(document).ready(function () {
             quantity = newQuantity;
         }
 
-        // Get new total
-        totalHelper();
+      
+     completeAmount();
     });
 
     function showError(message) {
@@ -200,9 +197,9 @@ $(document).ready(function () {
         toppings = newToppings;
 
         // Get new total
-        totalHelper();
+     completeAmount();
 
-        // Build out the order modal content
+       
         const deliveryAddress = $("#dAddress").val();
 
         $("#oSummaryName").html(pizzaName);
