@@ -17,6 +17,8 @@ header {
     height: 80px;
     background-color: chocolate;
     background-image: url("https://i.pinimg.com/736x/17/78/a9/1778a9a311769df94783691986c1734c.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 12;
     position: fixed;  
 }
@@ -90,7 +92,7 @@ nav ul li a:hover {
     position: fixed;
     top: 80px;
     text-align: center;
-    background: url("../img/wallpaperflare.com_wallpaper.jpg");
+    background: url("../img/download2.jpeg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;  
@@ -325,15 +327,19 @@ nav ul li a:hover {
     padding:30px;
     margin: 2rem auto;
     border-radius: 5%;
+    background-image: url("../img/pikwizard-central-cafe-neon-sign-free-photo.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: darkgray;
     font-style: italic;
-    color: burlywood;
-    box-shadow: 2px 2px chocolate;
+    color: black;
+    font-weight: bolder;
+    box-shadow: 4px 2px chocolate;
   
 }
 
 .loc-title{
-    padding-top: 40px;
+    padding-top: 25px;
     color: #fff;
     font-size: 3rem;
 }
