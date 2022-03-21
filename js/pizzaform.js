@@ -177,15 +177,15 @@ $(document).ready(function () {
 
     function placeOrder() {
         if (!pizzaSize) {
-            return showError("You must select a pizza size");
+            return showError("You must choose a pizza size");
         }
 
         if (!ourCrustType) {
-            return showError("You must select a crust type");
+            return showError("You must choose a type of crust");
         }
 
         if (!delivery) {
-            return showError("You must select a delivery option");
+            return showError("You must choose your delivery option");
         }
 
         const newToppings = [];
