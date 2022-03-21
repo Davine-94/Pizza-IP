@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration:none;
+}
+
+body{
+    font-family: 'poppins', serif;
+  
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: chocolate;
+    background-image: url("https://i.pinimg.com/736x/17/78/a9/1778a9a311769df94783691986c1734c.jpg");
+    z-index: 12;
+    position: fixed;  
+}
