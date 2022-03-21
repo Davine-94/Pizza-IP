@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Form</title>
+</head>
+<body>
+    <head>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/pizzaform.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Rokkitt|Trade+Winds&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Knewave&display=swap" rel="stylesheet">
+        <title>Make Your Order</title>
+    </head>
+    
+    <body>
+        <section class="backgroundArea">
+            <div class="errorArea">
+    
+            </div>
+           
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 order-details">
+                        </p> 
+                        <div class="card">
+                            <h3> Flavor: <span id="pName"></span></h3>
+                            <h4 class="sectionHead">Choose Your Pizza Size <span class="required-data">*</span></h4>
+            
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="pizzaSizes" type="radio" id="sizeSmall" value="small">
+                                <label class="form-check-label" for="sizeSmall">Small - Ksh. 800</label>
+                            </div>
+                
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="pizzaSizes" type="radio" id="sizeMedium" value="medium">
+                                <label class="form-check-label" for="sizeMedium">Medium - Ksh. 1100</label>
+                            </div>
+                
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="pizzaSizes" type="radio" id="sizeLarge" value="large">
+                                <label class="form-check-label" for="sizeLarge">Large - Ksh. 1500</label>
+                            </div>
+                
+                
+                            <h4 class="sectionHead">Select Crust Type <span class="required-data">*</span></h4>
+                
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="crustType" type="radio" id="typeCrispy" value="crispy">
+                                <label class="form-check-label" for="typeCrispy">Crispy</label>
+                            </div>
+                
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="crustType" type="radio" id="typeStuffed" value="stuffed">
+                                <label class="form-check-label" for="typeStuffed">Stuffed</label>
+                            </div>
+                
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" name="crustType" type="radio" id="typeGluttenFree" value="gluttenFree">
+                                <label class="form-check-label" for="typeGluttenFree">Gluten Free</label>
+                            </div>
+                
+                
+                            <h4 class="sectionHead">Select Any Extra Toppings</h4>
+                
+                
+                            <div class="form-check">
+                                <input class="form-check-input" name="toppings" type="checkbox" value="mushrooms" id="mushrooms">
+                                <label class="form-check-label" for="mushrooms">Mushrooms - Ksh. 100</label>
+                            </div>
+                
+                            <div class="form-check">
+                                <input class="form-check-input" name="toppings" type="checkbox" value="onions" id="onions">
+                                <label class="form-check-label" for="onions">Onions - Ksh 80</label>
+                            </div>
+                
+                            <div class="form-check">
+                                <input class="form-check-input" name="toppings" type="checkbox" value="sausage" id="sausage">
+                                <label class="form-check-label" for="sausage">Sausage - Ksh. 100</label>
+                            </div>
+                
+                            <div class="form-check">
+                                <input class="form-check-input" name="toppings" type="checkbox" value="extraCheese" id="extraCheese">
+                                <label class="form-check-label" for="extraCheese">Extra Cheese - Ksh. 100</label>
+                            </div>
+                
+                            <div class="delivery-block">
+                                <h4 class="sectionHead">Would you like to have your pizza delivered? <span
+                                        class="required-data">*</span></h4>
+                
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" name="delivery" type="radio" id="no" value="no">
+                                    <label class="form-check-label" for="no">No</label>
+                                </div>
+                
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" name="delivery" type="radio" id="yes" value="yes">
+                                    <label class="form-check-label" for="yes">Yes</label>
+                                </div>
+                
+                                <div id="yesToDelivery">
+                                    <textarea class="form-control" id="dAddress"
+                                        placeholder="Enter your delivery details" required></textarea>
+                                </div>
+                            </div>
+                
+                            <button type="button" id="order-btn" class="btn btn-block">Place Order</button>
+                        </div>
+                
+                        </div>
+                      
+                    <!-- Summary section -->
+                    <div class="col-md-4 order-summary">
+                        <div class="card">
+                            <div class="card-header">Order Summary</div>
+            
+                            <div class="card-body">
+                                <h5 class="card-title"id="sName"></h5>
+                                <p class="card-text" id="sSize"></p>
+                                <p class="card-text" id="sCrust"></p>
+                                <p class="card-text" id="sToppings"></p>
+                                <p class="card-text" id="sDelivery"></p>
+            
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="number" class="form-control" id="quantity" value="1" min="1" />
+                                </div>
+                            </div>
+            
+                            <div class="card-footer" id="sTotal">Total</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        
+            <!-- Order Modal -->
+            <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="orderModalTitle">Order Summary</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+        
+                        <div class="modal-body order-summary-body">
+                            <h3 id="oSummaryName"></h3>
+                            <p id="oSummarySize"></p>
+                            <p id="oSummaryCrust"></p>
+                            <p id="oSummmaryToppings"></p>
+                            <p id="oSummaryQuantity"></p>
+                            <p id="oSummaryTotal"></p>
+                            <p id="oSummaryDeliveryFee"></p>
+                            <p id="oSummaryDeliveryAddress"></p>
+                        </div>
+        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <button class="backArea">
+            <a href="index.html">Back</a>
+        </button>
+    </body>
+    
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/pizzaform.js"></script>
+    
+</body>
+</html>
