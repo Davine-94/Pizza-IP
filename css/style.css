@@ -102,3 +102,107 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
 }
+@keyframes bop {
+    0% {
+      transform: scale(0.9);
+    }
+    50%,
+    100% {
+      transform: scale(1);
+    }
+}
+  
+  @keyframes bopB {
+    0% {
+      transform: scale(0.9);
+    }
+    80%,
+    100% {
+      transform: scale(1) rotateZ(-3deg);
+    }
+}
+
+.bSection h1{
+    color:#fff;
+    padding-top: 10%;
+}
+
+.bSection > button{
+    padding: 6px;
+    margin-top: 3%;
+    border-radius: 50px;
+    outline: none;
+    font-size: 20px;
+    background-image: url("https://i.pinimg.com/736x/95/32/cd/9532cd2d949214d2bdd59e2cbac0f56d.jpg");
+    justify-content: center;
+    padding: 30px;
+    color: chocolate;
+}
+
+.bSection > button:hover{
+    transform: scale(0.3s);
+    border-radius: 0.5%;
+  }
+
+.bSection::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: 0.3;
+}
+
+.bSection > *{
+    position: relative;
+    z-index: 100;
+}
+
+.navigationIcon {
+    line-height: 60px;
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+}
+
+
+@media(max-width: 786px) {
+
+    .marinaraLogo {
+          position: fixed;
+          top: 0;
+          margin-top: 16px;
+    }
+
+    nav ul {
+          max-height: 0px;
+          background: #000;
+    }
+
+    nav.black ul {
+          background: #000;
+    }
+
+    .showing {
+          max-height: 34em;
+    }
+
+    nav ul li {
+          box-sizing: border-box;
+          width: 100%;
+          padding: 24px;
+          text-align: center;
+    }
+
+    .navigationIcon {
+          display: block;
+    }
+
+}
